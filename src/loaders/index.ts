@@ -31,10 +31,10 @@ export const stackedBarLoader = (async (): Promise<ChartTabularData> => {
   const case_state = await fetcher('epidemic/cases_state.csv');
 
   const filtered_death_state = death_state
-    .slice(0,16)
+    .slice(-17)
     .filter((row: any) => !!row.state);
   const filtered_case_state = case_state
-    .slice(0,16)
+    .slice(-17)
     .filter((row: any) => !!row.state);
 
   let data = filtered_death_state.map((row: any) => {
